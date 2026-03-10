@@ -5,9 +5,9 @@ export function Header() {
         <h1 className="text-primary text-xl font-bold tracking-tighter uppercase italic">VAYA SOCIAL CLUB</h1>
       </div>
       <nav className="hidden md:flex items-center gap-8">
-        <a className="text-sm font-bold tracking-widest hover:text-primary transition-colors" href="#">HOME</a>
+        <a className="text-sm font-bold tracking-widest hover:text-primary transition-colors" href="#">WHY JOIN</a>
         <a className="text-sm font-bold tracking-widest hover:text-primary transition-colors" href="#">ABOUT</a>
-        <a className="text-sm font-bold tracking-widest hover:text-primary transition-colors" href="#">SCHEDULE</a>
+        <a className="text-sm font-bold tracking-widest hover:text-primary transition-colors" href="#">PARTNERSHIPS</a>
         <a className="text-sm font-bold tracking-widest hover:text-primary transition-colors border-2 border-primary px-4 py-1 rounded-full text-primary hover:bg-primary hover:text-white transition-all" href="#">SIGN UP</a>
       </nav>
       <button className="md:hidden material-symbols-outlined text-primary">menu</button>
