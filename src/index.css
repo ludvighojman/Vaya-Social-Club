@@ -38,6 +38,16 @@
     filter: contrast(150%) brightness(110%);
     -webkit-text-stroke: 1px rgba(255, 102, 0, 0.2)
 }
+@keyframes scroll-up {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+
+@keyframes scroll-down {
+  from { transform: translateY(-50%); }
+  to { transform: translateY(0); }
+}
+
 .brush-script-distressed::after {
     content: "";
     position: absolute;
