@@ -1,16 +1,59 @@
+const COL_SEEDS = [
+  [10, 20, 30, 40],
+  [91, 82, 73, 64],
+  [15, 25, 35, 45],
+  [101, 102, 103, 104],
+  [201, 202, 203, 204],
+];
+
+const COL_CONFIG = [
+  { direction: 'up', duration: 40 },
+  { direction: 'down', duration: 35 },
+  { direction: 'up', duration: 45 },
+  { direction: 'down', duration: 38 },
+  { direction: 'up', duration: 42 },
+];
+
 export function Hero() {
   return (
     <section className="relative h-[90vh] w-full flex flex-col justify-end overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img 
-          className="w-full h-full object-cover brightness-75 contrast-125" 
-          alt="Group of diverse runners in Lisbon with Bridge in sunset" 
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX12TIZ8AX_Fe2Tpr0dSbbAtUBULzdkkvG9WzrBF3MT3OP9DbSJbYfi9gCtUXklU2eXcTGOfnNqZW4KzWSyHHhEh8i_UP5NIPTDjGkYhhOAh65JVxUmFp19DPxzbVVK4TdcLfkHAZo5upv1i_teZ8csptd12sp8PIx9uLIMhqBn82_ToUGYhDFwLfqlntvW9xwiYOxYLE4SNrAMpvPkZ3bUOy5fBgYVJ9QVlLwAR3qYfZsvWjy7Iv849kt_wKJdT_vplkdS3oJ6GfJ"
-          referrerPolicy="no-referrer"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-60"></div>
-        <div className="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+        {/* Rolling image columns */}
+        <div className="absolute inset-0 flex flex-row gap-5 p-5">
+          {COL_SEEDS.map((seeds, colIdx) => {
+            const { direction, duration } = COL_CONFIG[colIdx];
+            const images = seeds.map(seed => `https://picsum.photos/seed/${seed}/400/600`);
+            const strip = [...images, ...images];
+            return (
+              <div key={colIdx} className="flex-1 overflow-hidden">
+                <div
+                  className="flex flex-col gap-5 w-full"
+                  style={{
+                    height: 'max-content',
+                    animation: `scroll-${direction} ${duration}s linear infinite`,
+                  }}
+                >
+                  {strip.map((src, i) => (
+                    <img
+                      key={i}
+                      src={src}
+                      alt=""
+                      className="w-full aspect-[2/3] object-cover rounded-2xl flex-shrink-0"
+                      draggable={false}
+                    />
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/60 to-background-dark/30 opacity-90" />
+        <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
       </div>
+
+      {/* Text content */}
       <div className="relative z-10 px-6 pb-20 md:px-20 max-w-5xl">
         <h1 className="text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter uppercase italic mb-4 drop-shadow-2xl brush-script-distressed" style={{color: 'white', WebkitTextStroke: '0', backgroundImage: 'none'}}>
           <span style={{fontFamily: "'Edo SZ', sans-serif"}}>Run club born <br/>in </span><span className="text-primary">Lisbon.</span>

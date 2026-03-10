@@ -1,7 +1,6 @@
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Stats } from './components/Stats';
-import { Gallery } from './components/Gallery';
 import { Newsletter } from './components/Newsletter';
 import { Footer } from './components/Footer';
 
@@ -11,7 +10,6 @@ export default function App() {
       <Header />
       <Hero />
       <Stats />
-      <Gallery />
       <Newsletter />
       <Footer />
     </div>
