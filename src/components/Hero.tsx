@@ -13,7 +13,7 @@ export function Hero() {
       </div>
       <div className="relative z-10 px-6 pb-20 md:px-20 max-w-5xl">
         <h1 className="text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter uppercase italic mb-4 drop-shadow-2xl brush-script-distressed" style={{color: 'white', WebkitTextStroke: '0', backgroundImage: 'none'}}>
-          Run club born <br/>in <span className="text-primary">Lisbon.</span>
+          <span style={{fontFamily: "'Edo SZ', sans-serif"}}>Run club born <br/>in </span><span className="text-primary">Lisbon.</span>
         </h1>
         <p className="text-white/90 text-xl md:text-2xl font-medium mb-8 flex items-center gap-2">
           <span className="material-symbols-outlined text-primary">event</span>
