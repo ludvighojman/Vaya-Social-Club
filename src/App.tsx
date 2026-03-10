@@ -5,6 +5,8 @@ import { Stats } from './components/Stats';
 import { Newsletter } from './components/Newsletter';
 import { Footer } from './components/Footer';
 import { About } from './pages/About';
+import { Events } from './pages/Events';
+import { Partnerships } from './pages/Partnerships';
 
 export default function App() {
   return (
@@ -14,10 +16,11 @@ export default function App() {
         <Route path="/" element={<>
           <Hero />
           <Stats />
-          <Gallery />
           <Newsletter />
         </>} />
         <Route path="/about" element={<About />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/partnerships" element={<Partnerships />} />
       </Routes>
       <Footer />
     </div>
