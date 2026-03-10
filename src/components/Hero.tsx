@@ -62,9 +62,14 @@ export function Hero() {
           <span className="material-symbols-outlined text-primary">event</span>
           Next Run: March 14th.
         </p>
-        <button className="bg-primary text-white font-black text-lg px-10 py-5 rounded-none shadow-[8px_8px_0px_0px_rgba(255,102,0,0.3)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all uppercase tracking-widest">
-          JOIN THE COMMUNITY
-        </button>
+        <div className="flex flex-wrap gap-4">
+          <button className="bg-primary text-white font-black text-lg px-10 py-5 rounded-none shadow-[8px_8px_0px_0px_rgba(255,102,0,0.3)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all uppercase tracking-widest">
+            JOIN THE COMMUNITY
+          </button>
+          <a href="/events" className="border-2 border-white text-white font-black text-lg px-10 py-5 rounded-none shadow-[8px_8px_0px_0px_rgba(255,255,255,0.3)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 hover:bg-white hover:!text-black transition-all uppercase tracking-widest">
+            UPCOMING EVENTS
+          </a>
+        </div>
       </div>
     </section>
   );
