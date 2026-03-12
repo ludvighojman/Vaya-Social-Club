@@ -2,9 +2,20 @@
 
 @theme {
   --color-primary: #ff6600;
-  --color-background-light: #f8f7f5;
-  --color-background-dark: #23170f;
+  --color-background-light: #ffffff;
+  --color-background-dark: #111111;
   --font-display: "Space Grotesk", sans-serif;
+  --radius-pill: 9999px;
+  --radius-card: 1.75rem;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
 .vintage-grain {
