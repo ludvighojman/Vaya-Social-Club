@@ -50,47 +50,41 @@ const pastEvents = [
 
 export function Events() {
   return (
-    <main className="pt-24 pb-20 px-6 md:px-20">
+    <main className="pt-28 pb-32 px-8 md:px-20">
 
       {/* Upcoming */}
-      <h2 className="text-4xl md:text-5xl font-black uppercase italic mb-10 brush-script-distressed">
+      <p className="text-xs font-bold tracking-[0.2em] uppercase text-primary mb-4">Schedule</p>
+      <h2 className="text-4xl md:text-5xl font-black uppercase leading-tight text-slate-900 dark:text-white mb-16">
         Upcoming
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32">
         {upcomingEvents.map((event) => (
-          <div key={event.title} className="rounded-2xl overflow-hidden border border-slate-200/60 dark:border-slate-700/40 shadow-sm hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-slate-800/50">
-            {/* Image */}
-            <div className="relative aspect-[16/9]">
+          <div key={event.title} className="group">
+            <div className="relative aspect-[16/9] overflow-hidden mb-5">
               <img
                 src={event.image}
                 alt={event.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              {/* Date badge */}
-              <span className="absolute top-4 left-4 bg-primary text-white text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded-md">
+              <span className="absolute top-4 left-4 bg-primary text-white text-xs font-black uppercase tracking-widest px-3 py-1.5">
                 {event.dateBadge}
               </span>
-              {/* Price badge */}
-              <span className="absolute top-4 right-4 bg-white text-slate-900 text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow">
+              <span className="absolute top-4 right-4 bg-white text-slate-900 text-xs font-black uppercase tracking-widest px-3 py-1.5">
                 {event.priceBadge}
               </span>
             </div>
-
-            {/* Info */}
-            <div className="p-3">
-              <h3 className={`text-base font-black uppercase tracking-wide mb-2 ${event.titleColor}`}>
-                {event.title}
-              </h3>
-              <div className="flex flex-col gap-1 text-xs text-slate-500 dark:text-slate-400">
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-3.5 h-3.5 text-primary shrink-0" />
-                  <span>{event.day}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-3.5 h-3.5 text-primary shrink-0" />
-                  <span>{event.location}</span>
-                </div>
+            <h3 className={`text-lg font-black uppercase tracking-wide mb-3 ${event.titleColor}`}>
+              {event.title}
+            </h3>
+            <div className="flex flex-col gap-1.5 text-xs text-slate-500 dark:text-slate-400">
+              <div className="flex items-center gap-2">
+                <Calendar className="w-3.5 h-3.5 text-primary shrink-0" />
+                <span>{event.day}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin className="w-3.5 h-3.5 text-primary shrink-0" />
+                <span>{event.location}</span>
               </div>
             </div>
           </div>
@@ -98,28 +92,23 @@ export function Events() {
       </div>
 
       {/* Past Events */}
-      <h2 className="text-4xl md:text-5xl font-black uppercase italic mb-10 brush-script-distressed">
+      <p className="text-xs font-bold tracking-[0.2em] uppercase text-primary mb-4">Archive</p>
+      <h2 className="text-4xl md:text-5xl font-black uppercase leading-tight text-slate-900 dark:text-white mb-16">
         Past Events
       </h2>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {pastEvents.map((event) => (
-          <div key={event.title} className="relative rounded-xl overflow-hidden aspect-[3/4] group">
+          <div key={event.title} className="relative overflow-hidden aspect-[3/4] group">
             <img
               src={event.image}
               alt={event.title}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 grayscale"
             />
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-            {/* Text */}
-            <div className="absolute bottom-0 left-0 right-0 p-3">
-              <p className="text-white text-xs font-black uppercase leading-tight mb-1">
-                {event.title}
-              </p>
-              <p className="text-slate-300 text-[10px]">
-                {event.date} · {event.location}
-              </p>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-4">
+              <p className="text-white text-xs font-black uppercase leading-tight mb-1">{event.title}</p>
+              <p className="text-white/50 text-[10px] tracking-widest">{event.date}</p>
             </div>
           </div>
         ))}
